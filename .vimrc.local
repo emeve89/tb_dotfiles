@@ -45,3 +45,5 @@ let g:airline_symbols.space = "\ua0"
 
 map <Leader>i mmgg=G`m<CR>
 set relativenumber
+set hlsearch
+
