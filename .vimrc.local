@@ -52,3 +52,9 @@ set winwidth=120
 set winheight=5
 set winminheight=5
 set winheight=999
+
+" Vim-Rspec configurations
+let g:rspec_command = '!bundle exec spec {spec}'
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
