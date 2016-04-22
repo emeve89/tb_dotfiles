@@ -8,3 +8,4 @@ Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'morhetz/gruvbox'
 Plug 'thoughtbot/vim-rspec'
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
