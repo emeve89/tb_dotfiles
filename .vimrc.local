@@ -58,6 +58,7 @@ let g:rspec_command = '!bundle exec rspec {spec}'
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
 
 " MacVim configurations
 set guifont=Inconsolata\ for\ Powerline:h15
@@ -102,9 +103,15 @@ if has("gui_running")
     call RSpec()
   endfunction
 
+  function! RunAllTests()
+    let s:current_test = 'spec'
+    call RSpec()
+  endfunction
+
   nnoremap <Leader>t :call RunCurrentTest()<CR>
   nnoremap <Leader>s :call RunCurrentLineInTest()<CR>
   nnoremap <Leader>l :call RunLastCommand()<CR>
+  nnoremap <Leader>a :call RunAllTests()<CR>
 else
   set term=xterm-256color
 endif
