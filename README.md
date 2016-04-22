@@ -6,7 +6,3 @@ How to use it
   ```
   bin/setup
   ```
-3. Run
-  ```
-  rcup
-  ```
