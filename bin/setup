@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Exit if any subcommand fails
+set -e
+
+ln -s .vimrc.local ~
+ln -s .vimrc.bundles.local ~
+ln -s .aliases.local ~
+ln -s .zshrc.local ~
+ln -s .gitconfig.local ~
+
+lsrc
+rcup
