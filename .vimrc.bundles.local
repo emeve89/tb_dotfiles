@@ -9,3 +9,5 @@ Plug 'ecomba/vim-ruby-refactoring'
 Plug 'morhetz/gruvbox'
 Plug 'thoughtbot/vim-rspec'
 Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
