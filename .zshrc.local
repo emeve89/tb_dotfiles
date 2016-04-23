@@ -2,6 +2,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
+setopt auto_cd
+cdpath=($HOME/Flewid $HOME/code)
+
 # The next line must be at the end of the file
 # Install ZSH syntax highlighting with brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
