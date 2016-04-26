@@ -6,3 +6,4 @@ How to use it
   ```
   bin/setup
   ```
+  (it _**may**_ need your sudo password to copy scripts to /usr/local/bin directory)
