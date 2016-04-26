@@ -1,78 +1,11 @@
-" Colorscheme
-colorscheme gruvbox
-set background=dark    " Setting dark mode
-nnoremap <silent> [oh :call gruvbox#hls_show()<CR>
-nnoremap <silent> ]oh :call gruvbox#hls_hide()<CR>
-nnoremap <silent> coh :call gruvbox#hls_toggle()<CR>
-
-nnoremap * :let @/ = ""<CR>:call gruvbox#hls_show()<CR>*
-nnoremap / :let @/ = ""<CR>:call gruvbox#hls_show()<CR>/
-nnoremap ? :let @/ = ""<CR>:call gruvbox#hls_show()<CR>?
-let g:gruvbox_contrast_dark = 'medium'
-
-" NERDTree Configurations
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Unknown"   : "?"
-    \ }
-
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" TMuxLine Configuration
-let g:tmuxline_theme = 'airline'
-let g:airline_powerline_fonts = 1
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : ['#I', '#W'],
-      \'cwin' : ['#I', '#W', '#F'],
-      \'y'    : ['%R', '%a', '%Y'],
-      \'z'    : '#H'}
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
-
-map <Leader>i mmgg=G`m<CR>
-set relativenumber
-set hlsearch
-
-" Slits dinamic sizes
-set winwidth=120
-set winheight=5
-set winminheight=5
-set winheight=999
-
-" Vim-Rspec configurations
-let g:rspec_command = '!bundle exec rspec {spec}'
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
 " MacVim configurations
-set guifont=Inconsolata\ for\ Powerline:h15
-let g:Powerline_symbols = 'fancy'
-set encoding=utf-8
-set t_Co=256
-set fillchars+=stl:\ ,stlnc:\
-set termencoding=utf-8
-
 if has("gui_running")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    set guifont=Inconsolata\ for\ Powerline:h15
-  endif
+  set guifont=Inconsolata\ for\ Powerline:h15
+  let g:Powerline_symbols = 'fancy'
+  set encoding=utf-8
+  set t_Co=256
+  set fillchars+=stl:\ ,stlnc:\
+  set termencoding=utf-8
 
   function! SendToTerminal(args)
     execute ":silent !run_command '" . a:args . "'"
@@ -115,3 +48,61 @@ if has("gui_running")
 else
   set term=xterm-256color
 endif
+
+" Colorscheme
+colorscheme solarized
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+
+" NERDTree Configurations
+let g:NERDTreeIndicatorMapCustom = {
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "✖",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔︎",
+      \ "Unknown"   : "?"
+      \ }
+
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" TMuxLine Configuration
+let g:tmuxline_theme = 'airline'
+let g:airline_powerline_fonts = 1
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'y'    : ['%R', '%a', '%Y'],
+      \'z'    : '#H'}
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+map <Leader>i mmgg=G`m<CR>
+set relativenumber
+set hlsearch
+
+" Slits dinamic sizes
+set winwidth=120
+set winheight=5
+set winminheight=5
+set winheight=999
+
+" Vim-Rspec configurations
+let g:rspec_command = '!bundle exec rspec {spec}'
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+nnoremap <Leader>a :call RunAllSpecs()<CR>
