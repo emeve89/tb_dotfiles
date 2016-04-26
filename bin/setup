@@ -11,5 +11,4 @@ ln -f .gitconfig.local ~/.gitconfig.local
 
 sudo cp run_command /usr/local/bin/
 
-lsrc
 rcup
