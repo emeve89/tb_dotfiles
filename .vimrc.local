@@ -53,6 +53,8 @@ endif
 colorscheme solarized
 set background=light
 
+set cursorline
+
 " NERDTree Configurations
 let g:NERDTreeIndicatorMapCustom = {
       \ "Modified"  : "✹",
