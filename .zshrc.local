@@ -8,6 +8,9 @@ cdpath=($HOME/Flewid $HOME/code)
 # SSH with tmux
 function ssh () {/usr/bin/ssh -t $@ "tmux attach || tmux new";}
 
+export OPENNI2_REDIST=/usr/local/lib/ni2
+export OPENNI2_INCLUDE=/usr/local/include/ni2
+
 # The next line must be at the end of the file
 # Install ZSH syntax highlighting with brew install zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
